@@ -154,10 +154,6 @@ class TimerInput {
   }
 
   resetInputs() {
-    if (self.timer.getCurrentState() !== TimerState.IDLE) {
-      return;
-    }
-
     document.querySelector(this.options.workInput).value = this.timer.getWorkTime() / 60;
     document.querySelector(this.options.shortBreakInput).value = this.timer.getShortBreakTime() / 60;
     document.querySelector(this.options.longBreakInput).value = this.timer.getLongBreakTime() / 60;
@@ -165,6 +161,10 @@ class TimerInput {
   }
 
   resetTimer(event, self) {
+    if (self.timer.getCurrentState() !== TimerState.IDLE) {
+      return;
+    }
+
     self.timer.resetToDefaults();
     self.view.display();
     self.resetInputs();
