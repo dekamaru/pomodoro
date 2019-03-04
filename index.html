@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pomodoro App</title>
+    <link rel="stylesheet" href="https://viperart.github.io/pomodoro/resources/css/reset.css">
+    <link rel="stylesheet" href="https://viperart.github.io/pomodoro/resources/css/style.css">
+</head>
+<body>
+    <div class="wrap-violet"></div>
+    <div class="wrap-blue"></div>
+    <div class="wrap-green"></div>
+    <div class="wrap-red"></div>
+        <div class="app">
+            <div class="values">
+                <h1>Set the values</h1>
+                <div class="ranges">
+                    <span class="timer-desc">Work</span>
+                    <span class="num" id="work-time"></span>
+                    <input id='work-input' class='work' type="range" min="1" max="60" step="1" value="25"/>
+
+                    <span class="timer-desc">Short Break</span>
+                    <span class="num" id="break-short-time"></span>
+                    <input id='short-break-input' class="break-short" type="range" min="1" max="10" step="1" value="5"/>
+
+                    <span class="timer-desc">Long Break</span>
+                    <span class="num" id="break-long-time"></span>
+                    <input id='long-break-input' class="break-long" type="range" min="1" max="30" step="1" value="15"/>
+
+                    <span class="timer-desc">Rounds</span>
+                    <span class="num" id="rounds-count"></span>
+                    <input id='rounds' class="rounds" type="range" min="1" max="10" step="1" value="4"/>
+
+                    <button id="timer-reset">Reset</button>
+                </div>
+            </div>
+            <div class="timer">
+                <span id="phase">Current Phase:</span>
+                <span id="state"></span>
+                <span id="time"></span>
+                <div class="controls">
+                    <button id="start">Start</button>
+                    <button id="stop">Stop</button>
+                </div>
+            </div>
+        </div>
+        <script src="timer.js"></script>
+</body>
+</html>
